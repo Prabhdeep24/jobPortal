@@ -22,7 +22,6 @@ app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
   origin: "https://job-portal-react-two.vercel.app/",
-  credentials: true,
 };
 app.use(cors(corsOptions));
 app.get("/", (req, res) => {
