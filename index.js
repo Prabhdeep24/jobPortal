@@ -20,8 +20,16 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods",
+             "GET, HEAD, OPTIONS, POST, PUT DELETE");
+  res.header("Access-Control-Allow-Headers",
+             "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  next();
+});
 const corsOptions = {
-  Access-Control-Allow-Origin: "https://66cb14ae882f3dfbd3c736d3--incredible-platypus-0bea99.netlify.app/",
+  origin: "https://66cb14ae882f3dfbd3c736d3--incredible-platypus-0bea99.netlify.app/",
 };
 app.use(cors(corsOptions));
 app.get("/", (req, res) => {
