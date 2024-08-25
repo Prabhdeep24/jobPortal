@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
   next();
 });
 const corsOptions = {
-  origin: "https://66cb14ae882f3dfbd3c736d3--incredible-platypus-0bea99.netlify.app/",
+  Access-Control-Allow-Origin: "https://66cb14ae882f3dfbd3c736d3--incredible-platypus-0bea99.netlify.app/",
 };
 app.use(cors(corsOptions));
 app.get("/", (req, res) => {
