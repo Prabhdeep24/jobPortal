@@ -22,7 +22,6 @@ app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
   origin: "https://66cb14ae882f3dfbd3c736d3--incredible-platypus-0bea99.netlify.app/",
-  credentials: true,
 };
 app.use(cors(corsOptions));
 app.get("/", (req, res) => {
